@@ -10,9 +10,9 @@ node {
     }
   }
   stage('Build docker image'){
-    checkout 'https://github.com/icyguy64/jenkins/Dockerfile'
-  
-  
+    
+    def testImage = docker.build("test-image", "https://github.com/icyguy64/jenkins/Dockerfile") 
+
   }
   stage('Deploy'){
   
