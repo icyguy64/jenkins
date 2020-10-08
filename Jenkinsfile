@@ -10,8 +10,8 @@ node {
     }
   }
   stage('Build docker image'){
-    
-    def testImage = docker.build("test-image", "https://github.com/icyguy64/jenkins/Dockerfile") 
+    git 'https://github.com/icyguy64/jenkins'
+    def testImage = docker.build("test-image", "Dockerfile") 
 
   }
   stage('Deploy'){
