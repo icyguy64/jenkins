@@ -1,5 +1,5 @@
 node {
-  stage('SCM') {
+  stage('Prep') {
     git 'https://github.com/OpenKMIP/PyKMIP'
   }
   stage('SonarQube analysis') {
@@ -9,5 +9,14 @@ node {
         sh "${scannerHome}/bin/sonar-scanner -Dsonar.sources=. -Dsonar.projectKey=test_pipeline"
     }
   }
+  stage('Build docker image'){
+    
   
+  
+  }
+  stage('Deploy'){
+  
+  
+  
+  }
 }
