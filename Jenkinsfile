@@ -15,8 +15,6 @@ node {
     }
 
   stage('Build docker image'){
-    git 'https://github.com/icyguy64/jenkins'
-    def testImage = docker.build("test-image", "Dockerfile") 
 
   }
   stage('Deploy'){
