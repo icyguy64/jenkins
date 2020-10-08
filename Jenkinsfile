@@ -9,6 +9,11 @@ node {
         sh "${scannerHome}/bin/sonar-scanner -Dsonar.sources=. -Dsonar.projectKey=test_pipeline"
     }
   }
+  stage('Initialize'){
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
+
   stage('Build docker image'){
     git 'https://github.com/icyguy64/jenkins'
     def testImage = docker.build("test-image", "Dockerfile") 
