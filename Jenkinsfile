@@ -12,8 +12,7 @@ node {
     sh "wget https://github.com/icyguy64/jenkins/blob/main/Dockerfile"
   }
   stage('Build docker image'){
-    def dockerfile = 'Dockerfile'
-    def customImage = docker.build("my-image:${env.BUILD_ID}", "-f ${dockerfile} .") 
+    sh "docker build --tag pykmip:1.0 ."  
   }
   stage('run docker image'){
     sh "docker run --publish 8000:8080 --detach --name pypp my-image:${env.BUILD_ID}"
