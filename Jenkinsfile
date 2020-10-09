@@ -1,4 +1,5 @@
 node {
+  dir('foo'){
   stage('Prep') {
     git 'https://github.com/OpenKMIP/PyKMIP.git'
   }
@@ -20,5 +21,6 @@ node {
   }
   stage('run docker image'){
     sh "docker run --publish 8000:8080 --detach --name pypp pykmip:1.0"
+  }
   }
 }
