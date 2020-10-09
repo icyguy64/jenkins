@@ -10,7 +10,7 @@ node {
   stage('jenkins and docker file') {
     sh "pwd"
     dir('script'){
-      git 'https://github.com/icyguy64/jenkins.git'
+      git 'https://github.com/icyguy64/jenkins.git#origin'
     }
   }
   stage('Build docker image'){
