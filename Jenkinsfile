@@ -1,6 +1,7 @@
 node {
   stage('Prep') {
     git 'https://github.com/OpenKMIP/PyKMIP.git'
+    git 'https://github.com/icyguy64/jenkins.git/'
   }
   stage('Initialize'){
     def dockerHome = tool 'docker'
