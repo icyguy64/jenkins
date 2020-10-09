@@ -9,7 +9,7 @@ node {
   }
   stage('jenkins and docker file') {
     sh "pwd"
-    sh "wget https://github.com/icyguy64/jenkins/Dockerfile"
+    sh "wget https://github.com/icyguy64/jenkins/blob/main/Jenkinsfile"
   }
   stage('Build docker image'){
     sh "docker build --tag pykmip:1.0 ."
