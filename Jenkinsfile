@@ -15,6 +15,6 @@ node {
     sh "docker build --tag pykmip:1.0 ."  
   }
   stage('run docker image'){
-    sh "docker run --publish 8000:8080 --detach --name pypp my-image:${env.BUILD_ID}"
+    sh "docker run --publish 8000:8080 --detach --name pypp pykmip:1.0"
   }
 }
