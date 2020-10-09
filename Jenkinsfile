@@ -15,10 +15,10 @@ node {
     }
 
   stage('Build docker image'){
-
+        sh "docker build --tag pykmip:1.0 ."
   }
   stage('Deploy'){
-  
+        sh "docker run --publish 8000:8080 --detach --name pypp pykmip:1.0"
   
   
   }
