@@ -13,7 +13,7 @@ node {
   }
   stage('Build docker image'){
     def dockerfile = 'Dockerfile'
-    def customImage = docker.build("my-image:${env.BUILD_ID}", "-f ${dockerfile} ./dockerfiles") 
+    def customImage = docker.build("my-image:${env.BUILD_ID}", "-f ${dockerfile} .") 
   }
   stage('run docker image'){
     sh "docker run --publish 8000:8080 --detach --name pypp my-image:${env.BUILD_ID}"
