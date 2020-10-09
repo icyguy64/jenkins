@@ -1,6 +1,6 @@
 node {
   stage('Prep') {
-    git 'https://github.com/OpenKMIP/PyKMIP'
+    git 'https://github.com/OpenKMIP/PyKMIP.git'
   }
   stage('SonarQube analysis') {
 
