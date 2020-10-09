@@ -9,9 +9,7 @@ node {
   }
   stage('jenkins and docker file') {
     sh "pwd"
-    dir('script'){
-      git 'https://github.com/icyguy64/jenkins.git#origin'
-    }
+    git 'https://github.com/icyguy64/jenkins.git'
   }
   stage('Build docker image'){
     sh "docker build --tag pykmip:1.0 ."
