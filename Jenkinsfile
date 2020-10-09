@@ -3,12 +3,6 @@ node {
     git 'https://github.com/OpenKMIP/PyKMIP.git'
     git 'https://github.com/icyguy64/jenkins.git'
   }
-  stage('SonarQube analysis') {
-    def scannerHome = tool 'SonarQ';
-    withSonarQubeEnv('SonarQ') { 
-        sh "${scannerHome}/bin/sonar-scanner -Dsonar.sources=. -Dsonar.projectKey=test_pipeline"
-    }
-  }
   stage('Initialize'){
     def dockerHome = tool 'docker'
     env.PATH = "${dockerHome}/bin:${env.PATH}"
