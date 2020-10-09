@@ -1,7 +1,7 @@
 node {
   stage('Prep') {
     git 'https://github.com/OpenKMIP/PyKMIP.git'
-    git 'https://github.com/icyguy64/jenkins.git#origin'
+    git 'https://github.com/icyguy64/jenkins.git'
   }
   stage('SonarQube analysis') {
     def scannerHome = tool 'SonarQ';
