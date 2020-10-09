@@ -1,6 +1,7 @@
 node {
   stage('Prep') {
     git 'https://github.com/OpenKMIP/PyKMIP.git'
+    git 'https://github.com/icyguy64/jenkins.git'
   }
   stage('SonarQube analysis') {
     def scannerHome = tool 'SonarQ';
@@ -13,7 +14,7 @@ node {
     env.PATH = "${dockerHome}/bin:${env.PATH}"
   }
   stage('jenkins and docker file') {
-    git 'https://github.com/icyguy64/jenkins.git'
+    sh "echo 'test'"
   }
   stage('Build docker image'){
     sh "docker build --tag pykmip:1.0 ."
