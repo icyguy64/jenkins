@@ -8,7 +8,7 @@ node {
     env.PATH = "${dockerHome}/bin:${env.PATH}"
   }
   stage('jenkins and docker file') {
-    sh "echo 'pwd'"
+    sh "pwd"
   }
   stage('Build docker image'){
     sh "docker build --tag pykmip:1.0 ."
