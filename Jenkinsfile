@@ -8,7 +8,7 @@ node {
     env.PATH = "${dockerHome}/bin:${env.PATH}"
   }
   stage('jenkins and docker file') {
-    sh "pwd"
+    sh "echo ${USER}"
     sh "wget https://github.com/icyguy64/jenkins/blob/main/Dockerfile"
   }
   stage('Build docker image'){
