@@ -22,7 +22,7 @@ node {
 
   }
   stage('run docker image'){
-    sh "docker run -p 80:8000 -p 443:4043 --detach --name pypp pykmip:1.0 -v /mnt:/tmp"
+    sh "docker run -v /mnt:/tmp -p 80:8000 -p 443:4043 --detach --name pypp pykmip:1.0 "
     
 
   }
