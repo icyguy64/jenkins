@@ -13,6 +13,10 @@ node {
     def dockerHome = tool 'docker'
     env.PATH = "${dockerHome}/bin:${env.PATH}"
   }
+  stage('secrets'){
+    sh "printf "This is a secret" | docker secret create MASTER_KEY -"
+    sh "printf "This is a secret" | docker secret create HOST_KEY -"
+  }
   stage('jenkins and docker file') {
     sh "echo ${USER}"
     sh "wget -O https://raw.githubusercontent.com/icyguy64/jenkins/main/Dockerfile"
